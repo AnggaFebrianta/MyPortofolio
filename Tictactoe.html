@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Tic-Tac-Toe</title>
+    <style>
+        body {
+            font-family: 'poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #02011d;
+            color: #fff;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 60px;
+            margin-top: -10px;
+        }
+
+        h2 {
+            font-size: 30px;
+            color: #08f3e7;
+            font-weight: bold;
+        }
+
+        .title {
+            margin-bottom: 20px;
+        }
+
+        #game-container {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-gap: 5px;
+        }
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            background-color: #111;
+            border: 2px solid #08f3e7;
+            color: #fff;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .cell:hover {
+            background-color: #08f3e7;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #08f3e7;
+            color: #111;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+            margin-top: 40px;
+        }
+
+        button:hover {
+            background-color: #005a8d;
+        }
+
+        footer {
+            background-color: #02011d;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            margin-top: -50px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+</head>
+
+<body>
+
+    <section>
+        <h2 class="title">Play Tic-Tac-Toe</h2>
+        <div id="game-container"></div>
+        <button onclick="logout()">Kembali</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 By Angga Febrianta</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const gameContainer = document.getElementById('game-container');
+            const currentPlayerSpan = document.createElement('span');
+            currentPlayerSpan.id = 'current-player';
+            currentPlayerSpan.textContent = 'X';
+            document.querySelector('h2.title').appendChild(currentPlayerSpan);
+
+            let currentPlayer = 'X';
+            let gameBoard = ['', '', '', '', '', '', '', '', ''];
+            let gameActive = true;
+
+            function renderBoard() {
+                gameContainer.innerHTML = '';
+                gameBoard.forEach((cell, index) => {
+                    const cellElement = document.createElement('div');
+                    cellElement.classList.add('cell');
+                    cellElement.textContent = cell;
+                    cellElement.addEventListener('click', () => handleCellClick(index));
+                    gameContainer.appendChild(cellElement);
+                });
+            }
+
+            function handleCellClick(index) {
+                if (gameBoard[index] === '' && gameActive) {
+                    gameBoard[index] = currentPlayer;
+                    renderBoard();
+                    checkWinner();
+                    togglePlayer();
+                }
+            }
+
+            function togglePlayer() {
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                currentPlayerSpan.textContent = currentPlayer;
+            }
+
+            function checkWinner() {
+                const winPatterns = [
+                    [0, 1, 2], [3, 4, 5], [6, 7, 8],
+                    [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                    [0, 4, 8], [2, 4, 6]
+                ];
+
+                for (const pattern of winPatterns) {
+                    const [a, b, c] = pattern;
+                    if (gameBoard[a] && gameBoard[a] === gameBoard[b] && gameBoard[a] === gameBoard[c]) {
+                        gameActive = false;
+                        alert(`Player ${gameBoard[a]} wins!`);
+                        break;
+                    }
+                }
+
+                if (!gameBoard.includes('') && gameActive) {
+                    gameActive = false;
+                    alert('It\'s a draw!');
+                }
+            }
+
+            renderBoard();
+        });
+
+        function logout() {
+            alert('Kembali berhasil');
+            window.location.href = "myProjects.html";
+        }
+    </script>
+
+</body>
+
+</html>

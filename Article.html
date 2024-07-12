@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portofolio</title>
+    <style>
+        body {
+            font-family: 'poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #02011d;
+            color: #fff;
+        }
+
+        header {
+            background-color: #02011d;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            background-color: #02011d;
+            font-size: 20px;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        nav a.clicked {
+            border-bottom: 2px solid #08f3e7;
+            padding-bottom: 8px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 60px;
+            margin-top: -10px;
+        }
+
+        h2 {
+            font-size: 30px;
+            color: #08f3e7;
+            font-weight: bold;
+        }
+
+        .title {
+            margin-bottom: 20px;
+        }
+
+        .article-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .article {
+            flex: 1;
+            text-align: center;
+            max-width: 300px;
+            margin: 0 10px 20px;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #111;
+            border-radius: 15px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .article:hover {
+            transform: scale(1.05);
+        }
+
+        .article img {
+            width: 100%;
+            max-width: 100%;
+            height: 200px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+        }
+
+        .article h3 {
+            font-size: 20px;
+            color: #fff;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .article p {
+            color: #fff;
+        }
+
+        .read-more {
+            margin-top: 10px;
+            color: #08f3e7;
+            text-decoration: none;
+           
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #02011d;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            margin-top: -50px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div>
+                <p style="font-size: 1.5em; margin-left: 50px;">Portofolio</p>
+            </div>
+            <script>
+                function changeColor(linkId) {
+                    var links = document.querySelectorAll('nav a');
+                    for (var i = 0; i < links.length; i++) {
+                        links[i].style.backgroundColor = '';
+                    }
+                    document.getElementById(linkId).style.backgroundColor = '#08f3e7';
+                    var clickedLink = document.getElementById(linkId);
+                    clickedLink.classList.add('clicked');
+                }
+            </script>
+            <div>
+                <a id="homeLink" href="index.html" onclick="changeColor('homeLink')">Home</a>
+                <a id="aboutLink" href="About.html" onclick="changeColor('aboutLink')">About Me</a>
+                <a id="projectsLink" href="myProjects.html" onclick="changeColor('projectsLink')">My Projects</a>
+                <a id="projectsLink" href="Article.html" onclick="changeColor('projectsLink')">Skills</a>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <h2 class="title">Skills</h2>
+        <div class="article-container">
+            <article class="article">
+                <img src="6.jpeg" alt="Networking">
+                <h3>Networking</h3>
+                <p>
+                    networking adalah proses atau praktik terkait koneksi dan interaksi antara berbagai sistem, perangkat, atau individu. Dalam konteks teknologi informasi, networking sering kali merujuk pada pengaturan dan manajemen hubungan antara perangkat komputer untuk bertukar data dan informasi
+                </p>
+                <a href="Article1.html" class="read-more">Baca Selengkapnya</a>
+            </article>
+            <article class="article">
+                <img src="7.jpeg" alt="Desain Web">
+                <h3>Desain Web</h3>
+                <p>
+                    Desain web adalah proses menciptakan tampilan dan pengalaman pengguna yang menyenangkan ketika seseorang mengakses sebuah situs web
+                </p>
+                <a href="Article2.html" class="read-more">Baca Selengkapnya</a>
+            </article>
+            <article class="article">
+                <img src="8.jpeg" alt="Pengembang Front-End">
+                <h3>Pengembang Front-End</h3>
+                <p>
+                    Pengembang Front-End adalah profesional di bidang teknologi informasi yang fokus pada pengembangan antarmuka pengguna (UI) suatu aplikasi atau situs web.
+                </p>
+                <a href="Article3.html" class="read-more">Baca Selengkapnya</a>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Oleh Angga Febrianta</p>
+    </footer>
+
+</body>
+
+</html>
+

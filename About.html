@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>My Portofolio</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #02011d;
+            color: #fff;
+        }
+
+        header {
+            background-color: #02011d;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            background-color: #02011d;
+            font-size: 20px;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        nav a.clicked {
+            border-bottom: 2px solid #08f3e7;
+            padding-bottom: 8px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #home img {
+            width: 30%;
+            height: auto;
+            display: flex;
+            margin: 20px auto;
+            float: left;
+        }
+
+        #home h3 {
+            font-size: 30px;
+            color: #ffffff;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        #home h2 {
+            font-size: 30px;
+            color: #08f3e7;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        #home p {
+            font-size: 1.2em;
+            color: #ffffff;
+        }
+  .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #08f3e7;
+            font-size: 25px;
+        }
+        section {
+            padding: 60px;
+        }
+
+        footer {
+            background-color: #02011d;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            margin-top: 200px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div>
+                <p style="font-size: 1.5em; margin-left: 50px;">Portofolio</p>
+            </div>
+            <script>
+                function changeColor(linkId) {
+                    var links = document.querySelectorAll('nav a');
+                    for (var i = 0; i < links.length; i++) {
+                        links[i].style.backgroundColor = '';
+                    }
+                    document.getElementById(linkId).style.backgroundColor = '#08f3e7';
+                    var clickedLink = document.getElementById(linkId);
+                    clickedLink.classList.add('clicked');
+                }
+            </script>
+            <div>
+                <div>
+                    <a id="homeLink" href="index.html" onclick="changeColor('homeLink')">Home</a>
+                    <a id="aboutLink" href="About.html" onclick="changeColor('aboutLink')">About Me</a>
+                    <a id="projectsLink" href="myProjects.html" onclick="changeColor('projectsLink')">My Projects</a>
+                    <a id="projectsLink" href="Article.html" onclick="changeColor('projectsLink')">Skills</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home">
+        <img src="2.png">
+        <h2>About me</h2>
+        <p>Saya merupakan mahasiswa jurusan Ilkom dari Universitas Bumigora. Saya suka mengikuti berbagai perlombaan terkait frontend.
+            Saya merupakan mahasiswa jurusan Ilkom dari Universitas Bumigora. Saya suka mengikuti berbagai perlombaan terkait frontend.
+            Saya merupakan mahasiswa jurusan Ilkom dari Universitas Bumigora. Saya suka mengikuti berbagai perlombaan terkait frontend.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/anxietyzzx?mibextid=2JQ9oc" target="_blank" title="Facebook"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/_gavillainn?igsh=MWdrY3lxN29oYmF5Mg==" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/085337481046" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>     
+        </section>
+
+    <footer>
+        <p>&copy; 2023 By Angga Febrianta</p>
+    </footer>
+
+</body>
+
+</html>
+
+
+
+
+

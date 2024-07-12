@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portofolio</title>
+    <style>
+        body {
+            font-family: 'poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #02011d;
+            color: #fff;
+        }
+
+        header {
+            background-color: #02011d;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            background-color: #02011d;
+            font-size: 20px;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        nav a.clicked {
+            border-bottom: 2px solid #08f3e7;
+            padding-bottom: 8px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 60px;
+            margin-top: -10px;
+        }
+
+        h2 {
+            font-size: 30px;
+            color: #08f3e7;
+            font-weight: bold;
+        }
+
+        .title {
+            margin-bottom: 20px;
+        }
+
+        .article-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .article {
+            flex: 1;
+            text-align: center;
+            max-width: 300px;
+            margin: 0 10px 20px;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #111;
+            border-radius: 15px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .article:hover {
+            transform: scale(1.05);
+        }
+
+        .article img {
+            width: 100%;
+            max-width: 100%;
+            height: 200px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+        }
+
+        .article h3 {
+            font-size: 20px;
+            color: #fff;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .article p {
+            color: #fff;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #08f3e7;
+            color: #111;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+            margin-right: 100px;
+            margin-left:75px;
+        }
+
+        .button:hover {
+            background-color: #fff;
+            color: #111;
+        }
+
+        footer {
+            background-color: #02011d;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            margin-top: -50px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div>
+                <p style="font-size: 1.5em; margin-left: 50px;">Portofolio</p>
+            </div>
+            <div>
+                <a id="homeLink" href="index.html" onclick="changeColor('homeLink')">Home</a>
+                <a id="aboutLink" href="About.html" onclick="changeColor('aboutLink')">About Me</a>
+                <a id="projectsLink" href="myProjects.html" onclick="changeColor('projectsLink')">My Projects</a>
+                <a id="projectsLink" href="Article.html" onclick="changeColor('projectsLink')">Skills</a>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <h2 class="title">My project</h2>
+        <div class="article-container">
+            <article class="article">
+                <img src="10.jpeg" alt="Networking">
+                <h3>Tic-Tac-Toe</h3>
+                <p>Tic-Tac-Toe adalah permainan papan sederhana dengan papan berukuran 3x3, di mana dua pemain, biasanya disimbolkan sebagai "X" dan "O", saling bergantian menempatkan simbol mereka di sel-sel papan.</p>
+            </article>
+            <article class="article">
+                <img src="9.jpeg" alt="Desain Web">
+                <h3>Snake</h3>
+                <p>Game Snake adalah permainan klasik di mana pemain mengendalikan seekor ular untuk mengumpulkan makanan dan tumbuh lebih panjang</p>
+            </article>
+        </div>
+
+        <div class="button-container">
+            <a href="Tictactoe.html" class="button">Play Tic-Tac-Toe</a>
+            <a href="Snake.html" class="button">Play Snake</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Oleh Angga Febrianta</p>
+    </footer>
+
+</body>
+
+</html>

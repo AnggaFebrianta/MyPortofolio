@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portofolio</title>
+    <style>
+        body {
+            font-family: 'poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:#02011d;
+            color: #fff;
+        }
+
+        header {
+            background-color: #02011d; 
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-family: 'Poppins', sans-serif; 
+        }
+
+        nav {
+            background-color: #02011d;
+            font-size: 20px;  
+            padding: 10px;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center; 
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        nav a.clicked {
+            border-bottom: 2px solid #08f3e7;
+            padding-bottom: 8px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #home img {
+            width: 30%;
+            height: auto; 
+            display: flex; 
+            margin: 20px auto; 
+            float: right;
+        }
+
+        #home h3 {
+            font-size: 30px;
+            color: #ffffff; 
+            font-weight: bold;
+            margin-bottom: -5px;
+        }
+
+        #home h2 {
+            font-size: 30px; 
+            color: #ffffff; 
+            font-weight: bold;
+            margin-bottom: -35px;
+        }
+
+        #home h1 {
+            font-size: 50px; 
+            color: #ffffff; 
+            font-weight: bold;
+            margin-bottom: -5px;
+        }
+
+        #home h3:last-child {
+            font-size: 30px;
+            color: #ffffff; 
+            margin-bottom: -25px;
+        }
+
+        #home p1 {
+            font-size: 30px; 
+            color: #08f3e7; 
+        }
+
+        #home p {
+            font-size: 1.2em; 
+            color: #ffffff; 
+            margin-top: -10px;
+        }
+
+        .custom-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #08f3e7;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .custom-button:hover {
+            background-color: #08f3e7;
+        }
+
+        section {
+            padding: 60px;
+        }
+
+        footer {
+            background-color: #02011d; 
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            font-family: 'Poppins', sans-serif; 
+            margin-top: 200px;
+        }
+    </style>
+ 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div>
+                <p style="font-size: 1.5em; margin-left: 50px;">Portofolio</p>
+            </div>
+            <script>
+                function changeColor(linkId) {
+                    var links = document.querySelectorAll('nav a');
+                    for (var i = 0; i < links.length; i++) {
+                        links[i].style.backgroundColor = '';
+                    }
+                    document.getElementById(linkId).style.backgroundColor = '#08f3e7';
+                    var clickedLink = document.getElementById(linkId);
+                    clickedLink.classList.add('clicked');
+                }
+            </script>
+             <script>
+                function sendEmail() {
+                  var toEmail = "anggafebrianta51700@gmail.com";
+                  var subject = "Pendapat Anda Penting: Saran dan Kritik untuk Pengembangan Portofolio Saya";
+                  var body = "Halo Angga Febrianta, Semoga pesan ini menemukan Anda dengan baik. Saya adalah Angga febrianta, dan saya ingin mengucapkan terima kasih sebelumnya atas waktu yang Anda luangkan untuk mengeksplorasi portofolio saya. Saya sangat menghargai setiap masukan yang dapat meningkatkan kualitas dan kesan portofolio saya. Oleh karena itu, saya dengan rendah hati meminta saran dan kritik Anda. Jika Anda memiliki waktu, bisakah Anda memberikan pandangan atau saran mengenai hal-hal seperti navigasi, presentasi proyek, atau apapun yang menurut Anda dapat diperbaiki? Pendapat Anda akan sangat membantu saya untuk terus berkembang. Terima kasih banyak atas perhatian dan kerjasama Anda. Saya sangat menghargai setiap saran yang Anda berikan. Salam hangat dari Saya";
+                  var mailtoLink = "mailto:" + toEmail + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+                  window.location.href = mailtoLink;
+                }
+              </script>
+            
+            <div>
+                <div>
+                    <a id="homeLink" href="index.html" onclick="changeColor('homeLink')">Home</a>
+                <a id="aboutLink" href="About.html" onclick="changeColor('aboutLink')">About Me</a>
+                <a id="projectsLink" href="myProjects.html" onclick="changeColor('projectsLink')">My Projects</a>
+                <a id="projectsLink" href="Article.html" onclick="changeColor('projectsLink')">Skills</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home">
+        <img src="1.png">
+        <h2>Hello I'ts mee</h2>
+        <h1>Angga Febrianta</h1>
+        <h3>And I'm <p1>frontend developer</p1></h3>
+        <p>saya adalah pengembang web yang bersemangat</p>
+        <button class="custom-button" onclick="sendEmail()">Kirim Email</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 By Angga Febrianta</p>
+    </footer>
+
+</body>
+
+</html>
